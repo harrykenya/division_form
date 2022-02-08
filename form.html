@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>Arithmetic form</title>
+  <style>
+  body{
+    background-color:#669999;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body h1{
+    font-size: 18px;
+    text-align: center;
+  }
+
+  #htmlForm{
+    width: 50%;
+    margin: 0px auto;
+  }
+
+  #htmlForm label{
+    font-size:12px;
+  }
+
+  #htmlForm input[type="number"]{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  #htmlForm input[type="submit"]{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    text-align: center;
+  }
+
+  #htmlForm #sum_result{
+    text-align: center;
+    width: 100%;
+  }
+  </style>
+</head>
+<body>
+  
+ <div id="arithmetic">
+  <h1>Arithmetic</h1>
+  <form id="arithmeticForm">
+    <label for="first_value">First value:</label><br>
+    <input type="number" id="first_value" name="first_value" placeholder='Enter first value'><br>
+    <label for="second_value">Second value:</label><br>
+    <input type="number" id="second_value" name="second_value" placeholder="Enter second value"><br>
+    <button type="submit" id="add_btn">add</button>
+    <!-- <button type="button" id="multiply_btn">multiply</button> 
+    <button type="button" id="divide_btn">divide</button>  -->
+    <p id ="result"></p>
+  </form>
+ </div>
+  <script type='text/javascript'>
+    // click event for addition button
+    document.getElementById("arithmeticForm").addEventListener("submit", addition);
+    //click event for multiplication button
+    // document.getElementById("multiply_btn").addEventListener("click", multiplication);
+    // //click event for division button
+    // document.getElementById("divide_btn").addEventListener("click", division);
+
+    //addition
+    function addition(e){
+      e.preventDefault();
+      // Getting data from the form
+      let first_value = parseInt(document.querySelector("#first_value").value);
+      let second_value = parseInt(document.querySelector("#second_value").value);
+      let sum = first_value+second_value
+      document.getElementById('result').innerText=`The sum is ${sum}`
+    }
+
+    //multiplication
+    function multiplication(){
+      let multiply=first_value*second_value
+      console.log(multiply)
+      document.getElementById('result').innerText=`The value is ${multiply}`
+    }
+    //division
+    function division(){
+      let divide=first_value/second_value
+      console.log(divide)
+      document.getElementById('result').innerText=`The value is ${divide}`
+    }
+    
+  </script>
+</body>
+</html>

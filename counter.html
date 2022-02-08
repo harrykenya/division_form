@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>Counter</title>
+  <style>
+  body{
+    background-color:#729966;
+    color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+  }
+
+  #counter h1{
+    font-size: 18px;
+    text-align: center;
+  }
+
+  #counter{
+    width: 40%;
+    margin: 0px auto;
+  }
+
+  #counter #increment_btn{
+    padding:10px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  #counter #decrement_btn{
+    padding:10px;
+    border-radius: 5px;
+    border: none;
+  }
+  </style>
+</head>
+<body>
+  <div id="counter">
+    <h1>Counter</h1>
+    <p>Value: <span id="value"></span></p>
+    <button id="increment_btn">increment</button>
+    <button id="decrement_btn">decrement</button>
+  </div>
+  <script type='text/javascript'>
+
+    let value = 10;
+    // Embeding value to HTML
+    document.getElementById("value").innerText = value;
+
+    //Add an event listener for incrementing
+    document.getElementById("increment_btn").addEventListener("click", incrementCounter);
+
+    //Add an event listener for decrementing
+    document.getElementById("decrement_btn").addEventListener("click", decrementCounter);
+
+    function incrementCounter(){
+      // Increment value
+      value += 1;
+      // Embeding value to HTML
+      document.getElementById("value").innerText = value;
+    }
+
+    function decrementCounter(){
+      // Decrement value
+      value -= 1;
+      // Embeding value to HTML
+      document.getElementById("value").innerText = value;
+    }
+    
+  </script>
+</body>
+</html>

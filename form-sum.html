@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>Sum form</title>
+  <style>
+  body{
+    background-color:#669999;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body h1{
+    font-size: 18px;
+    text-align: center;
+  }
+
+  #htmlForm{
+    width: 50%;
+    margin: 0px auto;
+  }
+
+  #htmlForm label{
+    font-size:12px;
+  }
+
+  #htmlForm input[type="number"]{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  #htmlForm input[type="submit"]{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    text-align: center;
+  }
+
+  #htmlForm #sum_result{
+    text-align: center;
+    width: 100%;
+  }
+  </style>
+</head>
+<body>
+  
+  <h1>HTML FORM</h1>
+  <form id="htmlForm">
+    <label for="number_one">First number:</label><br>
+    <input type="number" id="number_one" name="number_one" placeholder='Enter first number'><br>
+    <label for="number_two">Second number:</label><br>
+    <input type="number" id="number_two" name="number_two" placeholder="Enter second number"><br>
+    <input type="submit" value="Get sum">
+    <p id="sum_result"></p>
+  </form>
+  <script type='text/javascript'>
+    //Add an event listener for form submission
+
+    document.getElementById("htmlForm").addEventListener("submit", submitFn);
+
+    function submitFn(e){
+
+      // Prevented submitting form data using a GET request
+      e.preventDefault();
+
+      // Getting data from the form
+      let number_one = parseInt(document.querySelector("#number_one").value);
+      let number_two = parseInt(document.querySelector("#number_two").value);
+
+      // Getting the sum
+      let sum =  number_one + number_two;
+
+      // Showing the name on the paragraph
+      document.getElementById("sum_result").innerText = `The sum is ${sum}`;
+    
+    }
+    
+  </script>
+</body>
+</html>
