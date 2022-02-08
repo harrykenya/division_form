@@ -1,3 +1,4 @@
-### Division form
+### Division,Multiplication,Addition form
 
-Division form using HTML,CSS,JS
+
+forms created using HTML,CSS,JS
